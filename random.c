@@ -8,10 +8,3 @@ char randchar(void) {
     int n = rand() % 26; 
     return alphabet[n];
 }
-
-void rand_string(char* s, size_t size) {
-    srand(time(NULL));
-    for (size_t n = 0; n < size; n++) {
-        s[n] = randchar();
-    }
-}
