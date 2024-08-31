@@ -1,16 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "random.h"
+#include <time.h>
 
-char* rand_string_alloc(size_t size)
+
+
+int main()
 {
-     char *s = malloc(size + 1);
-     if (s) {
-         rand_string(s, size);
-     }
-     return s;
-}
+	int a;
 
-int main(void) {
-    printf("result: %s", rand_string_alloc(7));
+	/* seed the randomizer */
+	srand( (unsigned)time(NULL) );
+
+	printf("Today's random word: ");
+	for(a=0;a<7;a++)
+		putchar( randchar() );
+	putchar('\n');
+
+	return(0);
 }
